@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './styles/styles.css';
+import styles from './Snackbar.module.css';
 import PropTypes from 'prop-types';
 
 /**
@@ -63,8 +63,8 @@ const Snackbar = ({ type, message, duration, open, closeAlert }) => {
     const wrapperRef = useRef(null);
     onClickOutside(wrapperRef);
 
-    return <div ref={wrapperRef} className={`snackbar alert-with-icon alert alert-dismissible ${open ? 'show fadeIn' : 'fadeOut'} fade alert-${type ? type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info' : 'success'}`} role="alert">
-        <button type="button" className="close" aria-label="Close" onClick={closeAlert}>
+    return <div ref={wrapperRef} className={`${styles.snackbar} ${styles["alert-with-icon"]} ${styles.alert} ${styles["alert-dismissible"]} ${open ? `${styles.show} ${styles.fadeIn}` : styles.fadeOut} ${styles.fade} ${styles[`alert-${type ? type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info' : 'success'}`]}`} role="alert">
+        <button type="button" className={styles.close} aria-label="Close" onClick={closeAlert}>
             <span aria-hidden="true">×</span>
         </button>
         <span data-notify="icon" className={`${type === 'error' ? 'ri-alert-fill' : 'ri-checkbox-circle-line'}`}></span>
