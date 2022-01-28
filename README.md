@@ -1,6 +1,6 @@
 # React Snackbar
 
-React Snackbar is a package for showing messages or popups.
+React { Snackbar } is a package for showing messages or popups.
 
 ## Installation
 
